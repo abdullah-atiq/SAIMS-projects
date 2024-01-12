@@ -11,7 +11,7 @@ void main() {
   ];
 
   Random rannum = Random();
-  num money = (rannum.nextInt(5) + 5) * 10000;
+  num money = (rannum.nextInt(5) + 5) * 100;
 
   // Calculate the initial sum of quantities
   num sum =
@@ -34,7 +34,7 @@ void main() {
 
     if (itemName == 'exit') {
       if (boughtItems.isEmpty) {
-          print("You didn't make any purchases");
+        print("You didn't make any purchases");
       } else {
         print('\nYou bought:');
         num totalSpent = 0;
@@ -102,20 +102,19 @@ void main() {
   if (sum > 0) {
     print('Thanks for shopping');
   } else {
-
-  print("\nSorry, we're out of items");
-  print("Come again later");
-  print('\nYou bought:');
-  num totalSpent = 0;
-  for (var item in boughtItems) {
-    String name1 = item['name'];
-    String quan1 = item['quantity'].toString();
-    String itemString = " $quan1 $name1";
-    itemString += item['quantity'] > 1 ? 's' : '';
-    print(itemString);
-    totalSpent += item['totalprice'];
-  }
-  print("Total spent: $totalSpent");
-  print("Remaining Balance: $money");
+    print("\nSorry, we're out of items");
+    print("Come again later");
+    print('\nYou bought:');
+    num totalSpent = 0;
+    for (var item in boughtItems) {
+      String name1 = item['name'];
+      String quan1 = item['quantity'].toString();
+      String itemString = " $quan1 $name1";
+      itemString += item['quantity'] > 1 ? 's' : '';
+      print(itemString);
+      totalSpent += item['totalprice'];
+    }
+    print("Total spent: $totalSpent");
+    print("Remaining Balance: $money");
   }
 }
