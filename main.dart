@@ -13,7 +13,6 @@ void main() {
   Random rannum = Random();
   num money = (rannum.nextInt(5) + 5) * 100;
 
-  // Calculate the initial sum of quantities
   num sum =
       hardwareStore.map((item) => item['quantity']).reduce((a, b) => a + b);
   List<Map<String, dynamic>> boughtItems = [];
